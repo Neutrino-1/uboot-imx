@@ -15,10 +15,10 @@ sysparam set	fw_version	4	#PHY firmware version 2022.01
 ################step 0: configure debug uart port. Assumes use of UART IO Pads.   #####
 ##### If using non-UART pads (i.e. using other pads to mux out the UART signals), #####
 ##### then it is up to the user to overwrite the following IO register settings   #####
-memory set	0x443C0180	32	0x00000000	#SW_MUX_CTL_PAD_UART1_RXD
-memory set	0x443C0184	32	0x00000000	#SW_MUX_CTL_PAD_UART1_TXD
-memory set	0x443C0330	32	0x00000049	#SW_PAD_CTL_PAD_UART1_RXD
-memory set	0x443C0334	32	0x00000049	#SW_PAD_CTL_PAD_UART1_TXD
+memory set	0x443C0244	32	0x00000000	#SW_MUX_CTL_PAD_UART3_RXD
+memory set	0x443C0248	32	0x00000000	#SW_MUX_CTL_PAD_UART3_TXD
+memory set	0x443C04AC	32	0x00000049	#SW_PAD_CTL_PAD_UART3_RXD
+memory set	0x443C04B0	32	0x00000049	#SW_PAD_CTL_PAD_UART3_TXD
 sysparam set	debug_uart	1	#UART index from 0 ('0' = UART1, '1' = UART2, '2' = UART3, '3' = UART4)
 
 ################step 1: DDRC configuration MC1################
@@ -86,9 +86,9 @@ ddrparam set	csPresent	0x3	#Indicates presence of DRAM at each chip select for P
 
 #### Frequency Setpoint 0 ###################
 
-ddrparam set	frequency0	933.0	# MHz
+ddrparam set	frequency0	1866.5	# MHz
 ddrparam set	pllbypass0	0	# set for >333MHz
-freq0 set	0x44481360	32	0x009B0008	#ANATOP_DRAM_CTRL2
+freq0 set	0x44481360	32	0x009B0004	#ANATOP_DRAM_CTRL2
 freq0 set	0x44481340	32	0x00000004	#ANATOP_DRAM_NUMERATOR
 freq0 set	0x44481350	32	0x00000002	#ANATOP_DRAM_DENOMINATOR
 freq0 set	0x44481300	32	0x00000003	#ANATOP_DRAM_CTRL1
@@ -97,23 +97,23 @@ freq0 chkbit1	0x444813F0	32	0x00000001	#ANATOP_DRAM_CTRL3: check pll_lock=1?
 freq0 set	0x44452680	32	0x202	#DRAM APB CLK(index 77) 100M PFD1_DIV2(400M)/20
 freq0 set	0x44454840	32	0x0	#DRAM PLL CLK SELECT
 
-freq0 timing	0x4e300100	32	0x12472100	#TIMING_CFG_3
-freq0 timing	0x4e300104	32	0xF877000E	#TIMING_CFG_0
-freq0 timing	0x4e300108	32	0x181624AA	#TIMING_CFG_1
-freq0 timing	0x4e30010C	32	0x005101E6	#TIMING_CFG_2
+freq0 timing	0x4e300100	32	0x248E321B	#TIMING_CFG_3
+freq0 timing	0x4e300104	32	0xF8EE001B	#TIMING_CFG_0
+freq0 timing	0x4e300108	32	0x2F2EB233	#TIMING_CFG_1
+freq0 timing	0x4e30010C	32	0x0005C18B	#TIMING_CFG_2
 
-freq0 timing	0x4e300124	32	0x0E3C0000	#DDR_SDRAM_INTERVAL
-freq0 timing	0x4e300160	32	0x00009100	#TIMING_CFG_4
-freq0 timing	0x4e30016C	32	0x30900000	#TIMING_CFG_7
-freq0 timing	0x4e300170	32	0x8A0A0508	#DDR_ZQ_CNTL
-freq0 timing	0x4e300250	32	0x00000014	#TIMING_CFG_8
-freq0 timing	0x4e300254	32	0x00300030	#TIMING_CFG_9
+freq0 timing	0x4e300124	32	0x1C790000	#DDR_SDRAM_INTERVAL
+freq0 timing	0x4e300160	32	0x00009101	#TIMING_CFG_4
+freq0 timing	0x4e30016C	32	0x35F00000	#TIMING_CFG_7
+freq0 timing	0x4e300170	32	0x8B0B0608	#DDR_ZQ_CNTL
+freq0 timing	0x4e300250	32	0x00000028	#TIMING_CFG_8
+freq0 timing	0x4e300254	32	0x00680068	#TIMING_CFG_9
 freq0 timing	0x4e300258	32	0x00000008	#TIMING_CFG_10
 freq0 timing	0x4e30025C	32	0x00000400	#TIMING_CFG_11
 
-freq0 timing	0x4e300300	32	0x11281109	#TIMING_CFG_12
-freq0 timing	0x4e300304	32	0x0035140A	#TIMING_CFG_13
-freq0 timing	0x4e300308	32	0x0620071E	#TIMING_CFG_14
+freq0 timing	0x4e300300	32	0x224F2213	#TIMING_CFG_12
+freq0 timing	0x4e300304	32	0x00722213	#TIMING_CFG_13
+freq0 timing	0x4e300308	32	0x0A380E3D	#TIMING_CFG_14
 
 #### Frequency Setpoint 1 ###################
 
@@ -193,8 +193,8 @@ ddrparam set	TrainInfo	0xC8	#0x05 = Detailed debug (e.g. eys delays)
 #0xFF = Firmware complete
 #others = reserved
 
-ddrparam set	MR1	0xB4
-ddrparam set	MR2	0x1B
+ddrparam set	MR1	0xE4
+ddrparam set	MR2	0x36
 ddrparam set	MR3	0x32
 ddrparam set	MR4	0x00
 ddrparam set	MR11	0x46
