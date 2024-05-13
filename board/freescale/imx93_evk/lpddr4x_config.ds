@@ -236,7 +236,7 @@ ddrparam set	DfiCsPolarity_fix	0x0
 
 
 ddrparam set	ATxImpedance	40
-ddrparam set	ODTImpedance	60
+ddrparam set	ODTImpedance	40
 ddrparam set	TxImpedance	40
 
 ddrparam set	lp4x_mode	1
