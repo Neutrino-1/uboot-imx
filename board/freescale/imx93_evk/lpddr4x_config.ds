@@ -195,9 +195,9 @@ ddrparam set	TrainInfo	0xC8	#0x05 = Detailed debug (e.g. eys delays)
 
 ddrparam set	MR1	0xB4
 ddrparam set	MR2	0x1B
-ddrparam set	MR3	0x32
+ddrparam set	MR3	0x22
 ddrparam set	MR4	0x00
-ddrparam set	MR11	0x46
+ddrparam set	MR11	0x44
 ddrparam set	MR12	0x11
 ddrparam set	MR13	0x08
 ddrparam set	MR14	0x11
@@ -208,9 +208,9 @@ ddrparam set	MR24	0x00
 
 #ddrparam set	MR1-1	0xB4
 #ddrparam set	MR2-1	0x1B
-#ddrparam set	MR3-1	0x32
+#ddrparam set	MR3-1	0x22
 #ddrparam set	MR4-1	0x00
-#ddrparam set	MR11-1	0x46
+#ddrparam set	MR11-1	0x44
 #ddrparam set	MR12-1	0x11
 #ddrparam set	MR13-1	0x08
 #ddrparam set	MR14-1	0x11
@@ -221,9 +221,9 @@ ddrparam set	MR24	0x00
 
 #ddrparam set	MR1-2	0x94
 #ddrparam set	MR2-2	0x9
-#ddrparam set	MR3-2	0x32
+#ddrparam set	MR3-2	0x22
 #ddrparam set	MR4-2	0x00
-#ddrparam set	MR11-2	0x46
+#ddrparam set	MR11-2	0x44
 #ddrparam set	MR12-2	0x11
 #ddrparam set	MR13-2	0x00
 #ddrparam set	MR14-2	0x11
@@ -237,7 +237,7 @@ ddrparam set	DfiCsPolarity_fix	0x0
 
 ddrparam set	ATxImpedance	40
 ddrparam set	ODTImpedance	60
-ddrparam set	TxImpedance	40
+ddrparam set	TxImpedance	60
 
 ddrparam set	lp4x_mode	1
 ddrparam set	read_dbi	0
