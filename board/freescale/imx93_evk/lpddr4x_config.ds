@@ -22,7 +22,7 @@ memory set	0x443C0334	32	0x00000049	#SW_PAD_CTL_PAD_UART1_TXD
 sysparam set	debug_uart	1	#UART index from 0 ('0' = UART1, '1' = UART2, '2' = UART3, '3' = UART4)
 
 ################step 1: DDRC configuration MC1################
-memory set	0x4e300110	32	0x44100001	#DDR_SDRAM_CFG
+memory set	0x4e300110	32	0x44300001	#DDR_SDRAM_CFG
 memory set	0x4e300000	32	0x008000BF	#CS0_BNDS
 memory set	0x4e300008	32	0x00C000FF	#CS1_BNDS
 memory set	0x4e300080	32	0x80000412	#CS0_CONFIG
@@ -103,7 +103,7 @@ freq0 timing	0x4e300108	32	0x1816E4AA	#TIMING_CFG_1
 freq0 timing	0x4e30010C	32	0x005101E6	#TIMING_CFG_2
 
 freq0 timing	0x4e300124	32	0x0E3C0000	#DDR_SDRAM_INTERVAL
-freq0 timing	0x4e300160	32	0x00009101	#TIMING_CFG_4
+freq0 timing	0x4e300160	32	0x0000E601	#TIMING_CFG_4
 freq0 timing	0x4e30016C	32	0x30900000	#TIMING_CFG_7
 freq0 timing	0x4e300170	32	0x8A0A0508	#DDR_ZQ_CNTL
 freq0 timing	0x4e300250	32	0x00000014	#TIMING_CFG_8
@@ -134,7 +134,7 @@ freq1 chkbit1	0x444813F0	32	0x00000001	#ANATOP_DRAM_CTRL3: check pll_lock=1?
 #freq1 timing	0x4e30010C	32	0x005101E6	#TIMING_CFG_2
 
 #freq1 timing	0x4e300124	32	0x0E3C0000	#DDR_SDRAM_INTERVAL
-#freq1 timing	0x4e300160	32	0x00009101	#TIMING_CFG_4
+#freq1 timing	0x4e300160	32	0x0000E601	#TIMING_CFG_4
 #freq1 timing	0x4e30016C	32	0x30900000	#TIMING_CFG_7
 #freq1 timing	0x4e300170	32	0x8A0A0508	#DDR_ZQ_CNTL
 #freq1 timing	0x4e300250	32	0x00000014	#TIMING_CFG_8
@@ -161,7 +161,7 @@ freq1 timing	0x4e300258	32	0x00000008	#TIMING_CFG_10
 #freq2 timing	0x4e30010C	32	0x0031010D	#TIMING_CFG_2
 
 #freq2 timing	0x4e300124	32	0x04C50000	#DDR_SDRAM_INTERVAL
-#freq2 timing	0x4e300160	32	0x00009100	#TIMING_CFG_4
+#freq2 timing	0x4e300160	32	0x0000E600	#TIMING_CFG_4
 #freq2 timing	0x4e30016C	32	0x30000000	#TIMING_CFG_7
 #freq2 timing	0x4e300170	32	0x89090408	#DDR_ZQ_CNTL
 #freq2 timing	0x4e300250	32	0x00000007	#TIMING_CFG_8
@@ -203,7 +203,7 @@ ddrparam set	MR13	0x08
 ddrparam set	MR14	0x11
 ddrparam set	MR16	0x00
 ddrparam set	MR17	0x00
-ddrparam set	MR22	0x06
+ddrparam set	MR22	0x04
 ddrparam set	MR24	0x00
 
 #ddrparam set	MR1-1	0xB4
@@ -216,7 +216,7 @@ ddrparam set	MR24	0x00
 #ddrparam set	MR14-1	0x11
 #ddrparam set	MR16-1	0x00
 #ddrparam set	MR17-1	0x00
-#ddrparam set	MR22-1	0x06
+#ddrparam set	MR22-1	0x04
 #ddrparam set	MR24-1	0x00
 
 #ddrparam set	MR1-2	0x94
@@ -229,14 +229,14 @@ ddrparam set	MR24	0x00
 #ddrparam set	MR14-2	0x11
 #ddrparam set	MR16-2	0x00
 #ddrparam set	MR17-2	0x00
-#ddrparam set	MR22-2	0x06
+#ddrparam set	MR22-2	0x04
 #ddrparam set	MR24-2	0x00
 
 ddrparam set	DfiCsPolarity_fix	0x0
 
 
 ddrparam set	ATxImpedance	40
-ddrparam set	ODTImpedance	40
+ddrparam set	ODTImpedance	60
 ddrparam set	TxImpedance	40
 
 ddrparam set	lp4x_mode	1
